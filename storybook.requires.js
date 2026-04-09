@@ -1,1 +1,0 @@
-require('../components/DataTable/DataTable.stories');
