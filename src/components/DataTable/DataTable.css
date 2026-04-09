@@ -1,0 +1,57 @@
+:root {
+  --accent: #4F6EF7;
+  --accent-tint: rgba(79,110,247,0.10);
+  --text: #1a1a1a;
+  --subtext: #6b7280;
+  --border: rgba(0,0,0,0.10);
+  --header-bg: rgba(0,0,0,0.05);
+  --group-bg: rgba(0,0,0,0.08);
+  --zebra: rgba(0,0,0,0.03);
+  --surface: #ffffff;
+  --row-hover: rgba(79,110,247,0.04);
+  --selected-bg: rgba(79,110,247,0.08);
+  --radius: 8px;
+  --shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04);
+}
+
+.dt-wrap { font-family: 'DM Sans', system-ui, sans-serif; font-size: 14px; color: var(--text); background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+.dt-toolbar { display: flex; align-items: center; justify-content: space-between; padding: 10px 16px; border-bottom: 1px solid var(--border); background: var(--surface); }
+.dt-toolbar-left { display: flex; align-items: center; gap: 8px; color: var(--subtext); font-size: 13px; }
+.dt-toolbar-right { display: flex; align-items: center; gap: 8px; }
+.dt-btn { padding: 5px 12px; border-radius: 5px; border: 1px solid var(--border); background: var(--surface); color: var(--accent); font-size: 13px; font-weight: 500; cursor: pointer; transition: background 0.15s; }
+.dt-btn:hover { background: var(--accent-tint); }
+.dt-scroll { overflow-x: auto; }
+.dt-table { border-collapse: collapse; width: 100%; }
+.dt-thead { position: sticky; top: 0; z-index: 2; }
+.dt-th { background: var(--header-bg); padding: 10px 14px; text-align: left; font-weight: 600; font-size: 13px; white-space: nowrap; border-bottom: 1px solid var(--border); user-select: none; }
+.dt-th.sortable { cursor: pointer; }
+.dt-th.sortable:hover { background: var(--accent-tint); }
+.dt-th.active { background: var(--accent-tint); color: var(--accent); }
+.dt-sort-icon { margin-left: 4px; font-size: 11px; opacity: 0.7; }
+.dt-tr { border-bottom: 1px solid var(--border); transition: background 0.1s; }
+.dt-tr:hover { background: var(--row-hover); }
+.dt-tr.zebra { background: var(--zebra); }
+.dt-tr.zebra:hover { background: var(--row-hover); }
+.dt-tr.selected { background: var(--selected-bg); }
+.dt-td { padding: 10px 14px; font-size: 14px; white-space: nowrap; vertical-align: middle; }
+.dt-td.editable { cursor: pointer; text-decoration: underline; text-decoration-style: dotted; text-underline-offset: 3px; }
+.dt-radio-cell { text-align: center; }
+.dt-radio { width: 17px; height: 17px; border-radius: 50%; border: 2px solid var(--accent); display: inline-flex; align-items: center; justify-content: center; cursor: pointer; transition: border-color 0.15s; }
+.dt-radio.checked::after { content: ''; width: 9px; height: 9px; border-radius: 50%; background: var(--accent); display: block; }
+.dt-group-row td { background: var(--group-bg); font-weight: 700; font-size: 13px; padding: 8px 14px; cursor: pointer; border-bottom: 1px solid var(--border); }
+.dt-group-chevron { margin-right: 8px; font-size: 10px; display: inline-block; transition: transform 0.2s; }
+.dt-group-chevron.open { transform: rotate(90deg); }
+.dt-badge { background: var(--border); border-radius: 10px; padding: 2px 8px; font-size: 12px; color: var(--subtext); margin-left: 8px; font-weight: 500; }
+.dt-status { display: inline-flex; align-items: center; gap: 5px; }
+.dt-status-dot { width: 7px; height: 7px; border-radius: 50%; }
+.dt-status-dot.active { background: #22c55e; }
+.dt-status-dot.inactive { background: #ef4444; }
+.dt-status-dot.pending { background: #f59e0b; }
+.dt-edit-input { border: 1px solid var(--accent); border-radius: 4px; padding: 3px 7px; font-size: 14px; font-family: inherit; outline: none; width: 100%; box-sizing: border-box; }
+.dt-edit-select { border: 1px solid var(--accent); border-radius: 4px; padding: 3px 7px; font-size: 14px; font-family: inherit; outline: none; background: white; cursor: pointer; }
+.dt-confirm-bar { position: sticky; bottom: 0; background: white; border-top: 1px solid var(--border); padding: 10px 16px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 -2px 8px rgba(0,0,0,0.06); }
+.dt-confirm-actions { display: flex; gap: 8px; }
+.dt-confirm-btn { padding: 6px 16px; border-radius: 5px; font-size: 13px; font-weight: 600; cursor: pointer; transition: opacity 0.15s; }
+.dt-confirm-btn.cancel { border: 1px solid var(--accent); color: var(--accent); background: transparent; }
+.dt-confirm-btn.confirm { border: none; background: var(--accent); color: white; }
+.dt-confirm-btn:hover { opacity: 0.8; }
